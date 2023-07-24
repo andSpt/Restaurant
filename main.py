@@ -146,3 +146,7 @@ def delete_menu(menu_id: str, db: Session = Depends(get_db)) -> Dict[str, str | 
     if db_menu is None:
         raise HTTPException(status_code=404, detail="menu not found")
     return db_menu
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=8000)
