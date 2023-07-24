@@ -29,14 +29,21 @@
 
 ## Запуск!!!
 
-1. Нужно создать в корне проекта файл .env, в котором указать настройки своей БД PostgreSQL по примеру файла .env.example
-2. Запускаем файл main.py через IDE или через терминал, можно и так: uvicorn main:app --reload
-
+1. Создаем виртуальное окружение. Для Windows: python -m venv <название_директории>. Для Linux: python3 -m venv <название_директории>.
+2. Активируем виртуальное окружение. Для Windows: <название_директории>\Scripts\activate. Для Linux: source <название_директории>/bin/activate.
+3. Устанавливаем зависимости: pip install -r requirements.txt
+4. Нужно создать в корне проекта файл .env, в котором указать настройки своей БД PostgreSQL по примеру файла .env.example
+5. Запускаем файл main.py через IDE или через терминал, можно и так: uvicorn main:app --reload
+ 
 
 ### Есть 2-ой вариант запуска с БД в контейнере
 
-1. Меняем файл database.py в корне проекта (в папке Restaurant) на аналогичный по названию файл из папки Copy_file_database 
-2. На ПК должен быть установлен и запущен Docker
-3. В терминале, находясь в корне проекта, вводим: docker-compose -f docker-compose-local.yaml up -d
-4. Запускаем файл main.py через IDE или через терминал
+
+1. Создаем виртуальное окружение. Для Windows: python -m venv <название_директории>. Для Linux: python3 -m venv <название_директории>.
+2. Активируем виртуальное окружение. Для Windows: <название_директории>\Scripts\activate. Для Linux: source <название_директории>/bin/activate.
+3. Устанавливаем зависимости: pip install -r requirements.txt
+4. Меняем файл database.py в корне проекта (в папке Restaurant) на аналогичный по названию файл из папки Copy_file_database 
+5. На ПК должен быть установлен и запущен Docker
+6. В терминале, находясь в корне проекта, вводим: docker-compose -f docker-compose-local.yaml up -d
+7. Запускаем файл main.py через IDE или через терминал
 

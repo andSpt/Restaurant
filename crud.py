@@ -4,9 +4,9 @@ from models import Dish, Menu, Submenu
 from schemas import DishIn, DishOut, SubmenuIn, SubmenuOut, MenuIn, MenuOut
 
 
-##############
-# CRUD of Dish
-##############
+################
+# CRUD of Dish #
+################
 
 def get_dish(db: Session, dish_id: str):
     return db.query(Dish).filter(Dish.id == dish_id).first()
@@ -46,9 +46,9 @@ def delete_dish(db: Session, dish_id: str):
                 "message": "The dish has been deleted"}
 
 
-#################
-# CRUD of Submenu
-#################
+###################
+# CRUD of Submenu #
+###################
 
 def get_submenu(db: Session, submenu_id: str):
     db_submenu = db.query(Submenu).filter(Submenu.id == submenu_id).first()
@@ -95,9 +95,9 @@ def delete_submenu(db: Session, submenu_id: str):
                 "message": "The submenu has been deleted"}
 
 
-##############
-# CRUD of Menu
-##############
+################
+# CRUD of Menu #
+################
 
 
 def get_menus(db: Session):
