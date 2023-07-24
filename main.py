@@ -22,9 +22,9 @@ def get_db():
     finally:
         db.close()
 
-##################
-# Endpoint of Dish
-##################
+####################
+# Endpoint of Dish #
+####################
 
 @app.get('/api/v1/menus/{menu_id}/submenus/{submenu_id}/dishes/{dish_id}', response_model=DishOut)
 def read_dish(dish_id: str, db: Session = Depends(get_db)):
@@ -60,9 +60,9 @@ def delete_dish(dish_id: str, db: Session = Depends(get_db)) -> Dict[str, str | 
         raise HTTPException(status_code=404, detail="dish not found")
     return db_dish
 
-#####################
-# Endpoint of Submenu
-#####################
+#######################
+# Endpoint of Submenu #
+#######################
 
 @app.get('/api/v1/menus/{menu_id}/submenus/{submenu_id}', response_model=SubmenuOut)
 def read_submenu(submenu_id: str, db: Session = Depends(get_db)):
@@ -102,9 +102,9 @@ def delete_submenu(submenu_id: str, db: Session = Depends(get_db)) -> Dict[str, 
         raise HTTPException(status_code=404, detail="submenu not found")
     return db_submenu
 
-##################
-# Endpoint of Menu
-##################
+####################
+# Endpoint of Menu #
+####################
 
 @app.get('/api/v1/menus/{menu_id}',
          response_model=MenuOut)
