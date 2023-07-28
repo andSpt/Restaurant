@@ -2,18 +2,15 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
 
-from config import load_config
+# from config import load_config
 
 
-config = load_config('.env')
+# config = load_config('.env')
 
-SQLALCHEMY_DATABASE_URL = f"postgresql://{config.db.db_user}:" \
-                          f"{config.db.db_password}@" \
-                          f"{config.db.db_host}:" \
-                          f"{config.db.db_port}/" \
-                          f"{config.db.database}"
+# DATABASE_URL = config.db.database_url
+DATABASE_URL = "postgresql://postgres:root@postgres_ylab:5432/ylab"
 
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
+engine = create_engine(DATABASE_URL)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
