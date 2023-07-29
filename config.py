@@ -4,7 +4,10 @@ from environs import Env
 
 @dataclass
 class DatabaseConfig:
-    database_url: str
+    postgres_user: str
+    postgres_password: str
+    postgres_db: str
+    pguser: str
 
 
 @dataclass
@@ -17,4 +20,8 @@ def load_config(path: str | None) -> Config:
     env: Env = Env()
     env.read_env(path)
 
-    return Config(db=DatabaseConfig(database_url=env('DATABASE_URL')))
+    return Config(db=DatabaseConfig(postgres_user=env('POSTGRES_USER'),
+                                    postgres_password=env('POSTGRES_PASSWORD'),
+                                    postgres_db=env('POSTGRES_DB'),
+                                    pguser=env('PGUSER'))
+                  )
