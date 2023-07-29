@@ -8,7 +8,8 @@ services:
       dockerfile: Dockerfile
     environment:
       DATABASE_URL: "postgresql://postgres:root@postgres_ylab:5432/ylab"
-    command: pytest -rm
+      SQLALCHEMY_SILENCE_UBER_WARNING: "1"
+    command: ["pytest", "-vv", "-rP", "--capture=no"]
     volumes:
       - shared-volume:/app/generated_files
     networks:
@@ -16,6 +17,7 @@ services:
     depends_on:
       postgres_ylab:
         condition: service_healthy
+    tty: true
 
 
   postgres_ylab:
