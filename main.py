@@ -5,7 +5,7 @@ from fastapi import FastAPI, HTTPException, Depends
 from sqlalchemy.orm import Session
 
 from schemas import DishIn, DishOut, SubmenuIn, SubmenuOut, MenuIn, MenuOut
-from models import Dish, Menu, Submenu, Base
+from models import Base
 from database import SessionLocal, engine
 import crud
 
