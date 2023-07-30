@@ -32,11 +32,11 @@
 * На ПК должен быть установлен и запущен Docker
 * Запускать команды в терминале нужно из корня проекта (в директории Restaurant)
 
-#### Команда для запуска приложения: `docker-compose -f run_app.yaml up -d`
+Команда для запуска приложения: `docker-compose -f run_app.yaml up -d`
 
-#### Команда для запуска тестов: `docker-compose -f run_tests.yaml up -d`
+Команда для запуска тестов: `docker-compose -f run_tests.yaml up -d`
 
-#### После прохождения тестов можно вывести результаты в консоль командой: `docker logs -f test_fastapi_ylab`
+После прохождения тестов можно вывести результаты в консоль командой: `docker logs -f test_fastapi_ylab`
 
 Остановить все сервисы и удалить контейнеры проекта, без удаления тома: `docker-compose -f run_app.yaml down`
                                                       с удалением тома: `docker-compose -f run_app.yaml down -v`
