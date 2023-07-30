@@ -1,8 +1,9 @@
 from fastapi.testclient import TestClient
+import pytest
+
 from main import app
 import crud
 
-import pytest
 
 client = TestClient(app)
 
@@ -12,12 +13,10 @@ menu_data = {
     'title': 'My menu 1',
     'description': 'My menu description 1'
 }
-
 submenu_data = {
     'title': 'My submenu 1',
     'description': 'My submenu description 1'
 }
-
 dish_data = {
     'title': 'My dish 1',
     'description': 'My dish description 1',
@@ -111,7 +110,8 @@ def test_get_list_dishes():
 
 def test_get_dish():
     response = client.get(
-        f"{BASE_URL}/{menu_data.get('id')}/submenus/{submenu_data.get('id')}/dishes/{dish_data.get('id')}")
+        f"{BASE_URL}/{menu_data.get('id')}/submenus/{submenu_data.get('id')}/"
+        f"dishes/{dish_data.get('id')}")
     assert response.status_code == 200
     assert response.json().get('id') == dish_data.get('id')
 

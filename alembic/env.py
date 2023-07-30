@@ -5,19 +5,20 @@ from sqlalchemy import pool
 from alembic import context
 
 from database import Base
-# from config import load_config
+from config import load_config
 
-# conf = load_config()
+
+conf = load_config('../.env')
 
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
 
-# section = config.config_ini_section
-# config.set_section_option(section, 'POSTGRES_USER', conf.db.postgres_user)
-# config.set_section_option(section, 'POSTGRES_PASSWORD', conf.db.postgres_password)
-# config.set_section_option(section, 'POSTGRES_DB', conf.db.postgres_db)
+section = config.config_ini_section
+config.set_section_option(section, 'POSTGRES_USER', conf.db.postgres_user)
+config.set_section_option(section, 'POSTGRES_PASSWORD', conf.db.postgres_password)
+config.set_section_option(section, 'POSTGRES_DB', conf.db.postgres_db)
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.

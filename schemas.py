@@ -1,6 +1,5 @@
 from pydantic import BaseModel, UUID4, Extra
 
-
 class MenuIn(BaseModel):
     title: str
     description: str

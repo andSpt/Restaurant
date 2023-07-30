@@ -34,16 +34,16 @@
 
 #### Команда для запуска приложения: `docker-compose -f run_app.yaml up -d`
 
-#### Команда для запуска тестов: `docker-compose -f tests_app.yaml up -d`
+#### Команда для запуска тестов: `docker-compose -f run_tests.yaml up -d`
 
 #### После прохождения тестов можно вывести результаты в консоль командой: `docker logs -f test_fastapi_ylab`
 
 Остановить все сервисы и удалить контейнеры проекта, без удаления тома: `docker-compose -f run_app.yaml down`
                                                       с удалением тома: `docker-compose -f run_app.yaml down -v`
 
-Остановить все сервисы и удалить контейнеры для тестирования проекта: `docker-compose -f run_app.yaml down`
+Остановить все сервисы и удалить контейнеры для тестирования проекта: `docker-compose -f run_tests.yaml down`
 
-При ошибках в тестах, попробуйте выполнить: `docker-compose -f run_app.yaml down -v`, а затем: `docker-compose -f tests_app.yaml up -d` 
+При ошибках в тестах, попробуйте выполнить: `docker-compose -f run_app.yaml down -v`, а затем: `docker-compose -f run_tests.yaml up -d` 
 
 
 
