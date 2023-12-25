@@ -34,6 +34,7 @@
 * Создайте в корне директории файл .env с настройками БД PostgreSQL по примеру файла .env.example
 
 Команда для запуска приложения: `docker-compose -f run_app.yaml up -d`
+Теперь посмотреть эндпойнты и в целом API по работе с меню ресторана можно тут: http://localhost:8000/docs
 
 Команда для запуска тестов: `docker-compose -f run_tests.yaml up -d`
 
